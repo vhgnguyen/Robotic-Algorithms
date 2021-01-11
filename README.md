@@ -6,7 +6,6 @@ Implement some robotic algorithms with python
 Install dependencies from the `requirements.txt` using:
 ```
 pip install -r requirements.txt
-
 ```
 
 ## Particle Filter

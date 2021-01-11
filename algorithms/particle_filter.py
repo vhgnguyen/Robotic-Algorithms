@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+# @Author: Vo Hoang Nguyen
+# @Date:   2021-01-11 14:42:04
+# @Last Modified by:   Vo Hoang Nguyen
+# @Last Modified time: 2021-01-11 14:42:10
+
 import math
 import matplotlib.pyplot as plt
 import numpy as np
