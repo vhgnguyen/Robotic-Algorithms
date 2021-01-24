@@ -15,3 +15,12 @@ pip install -r requirements.txt
 <p align="left">
   <img src="doc/particle_filter.gif" width=500/>
 </p>
+
+
+## Hybrid A-Star for Path Planning
+[Hybrid A-Star](./algorithms/hybrid_a_star) for path planning with Reeds-Shepp curves
+
+#### Demo
+<p align="left">
+  <img src="doc/hybrid_a_star.gif" width=500/>
+</p>
