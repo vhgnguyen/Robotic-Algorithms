@@ -99,6 +99,8 @@ class HybridAStar:
                              [goal[0]], [goal[1]], [goal[2]], [True], cost=0)
         
         # planning
+    
+    def planning(self, ox, oy, xy_res, yaw_res):
         openList, closedList = {}, {}
         p_Astar = calc_distance_heuristic(
             self.goalNode.xlist[-1], self.goalNode.ylist[-1], ox, oy, xy_res, rr=1)
@@ -111,7 +113,7 @@ class HybridAStar:
         while True:
             if not openList:
                 print("Error: Cannot find path, No open set")
-                return [], [], []
+                return None
 
             cost, c_id = heapq.heappop(pq)
             if c_id in openList:
@@ -143,7 +145,9 @@ class HybridAStar:
                     heapq.heappush(pq, (getHeuristicCost(neighbor, p_Astar, self.config), nind))
                     openList[nind] = neighbor
 
-        self.path = getFinalPath(closedList, finalPath)
+        path = getFinalPath(closedList, finalPath)
+
+        return path
 
 
 def motionInput():
@@ -361,7 +365,7 @@ def main():
 
     # Set Initial parameters
     start = [-20.0, 9.0, np.deg2rad(0.0)]
-    goal = [-2.0, 1.0, np.deg2rad(0.0)]
+    goal = [-3.0, 1.0, np.deg2rad(0.0)]
     print("Start : ", start)
     print("Goal : ", goal)
 
@@ -374,7 +378,10 @@ def main():
         plt.waitforbuttonpress(0)
 
     hybridAStar = HybridAStar(start, goal, ox, oy, XY_GRID_RES, YAW_GRID_RES)
-    path = hybridAStar.path
+    path = hybridAStar.planning(ox, oy, XY_GRID_RES, YAW_GRID_RES)
+    if path is None:
+        print("No possible path found!! \nDone!!")
+        return
     x = path.xlist
     y = path.ylist
     yaw = path.yawlist
