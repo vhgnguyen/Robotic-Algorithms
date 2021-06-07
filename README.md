@@ -9,7 +9,7 @@ pip install -r requirements.txt
 ```
 
 ## Particle Filter
-[Particle filter](./algorithms/particle_filter.py) for localization with known correspondences
+[Particle filter](./algorithms/localization/particle_filter.py) for localization with known correspondences
 
 #### Demo
 <p align="left">
@@ -18,7 +18,7 @@ pip install -r requirements.txt
 
 
 ## Hybrid A-Star for Path Planning
-[Hybrid A-Star](./algorithms/hybrid_a_star) for path planning with Reeds-Shepp curves
+[Hybrid A-Star](./algorithms/path_planning/hybrid_a_star) for path planning with Reeds-Shepp curves
 
 #### Demo
 <p align="left">
